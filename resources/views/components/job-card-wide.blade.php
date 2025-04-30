@@ -1,14 +1,12 @@
-<div class="p-4 bg-white/5 rounded-xl flex flex-col text-center">
+<x-panel class="flex gap-x-6">
     <div>
-        <img src="http://placehold.co/42" alt="placeholder">
+        <x-employer-logo></x-employer-logo>
     </div>
 
-    <div>
-        <div class="self-start text-sm">
-            Laracasts
-        </div>
-        <h3>Video Producer</h3>
-        <p>Full Time - From $60,000</p>
+    <div class="flex-1 flex flex-col">
+        <div class="self-start text-sm text-gray-600 transition-colors duration-300">Laracasts</div>
+        <h3 class="group-hover:text-blue-800 font-bold text-xl mt-3">Video Producer</h3>
+        <p class="text-sm text-gray-400 mt-auto">Full Time - From $60,000</p>
     </div>
 
     <div>
@@ -17,5 +15,5 @@
         <x-tag>Tag</x-tag>
     </div>
 
-</div>
+</x-panel>
 
