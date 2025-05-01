@@ -24,7 +24,12 @@ Route::get('/tags/{tag:name}',TagController::class);
 
 Route::get('/register',[RegisterUserController::class,'create'])->middleware('guest');
 Route::post('/register',[RegisterUserController::class,'store'])->middleware('guest');
-Route::get('/login',[SessionController::class,'create'])->middleware('guest');
+Route::get('/login',[SessionController::class,'create'])->name('login')->middleware('guest');
 Route::post('/login',[SessionController::class,'store'])->middleware('guest');
 
 Route::delete('/logout',[SessionController::class,'destroy'])->middleware('auth');
+Route::get('/logout',function (){
+    abort(404);
+});
+Route::get('/jobs/create',[JobController::class,'create'])->middleware('auth');
+Route::post('/jobs/create',[JobController::class,'store'])->middleware('auth');

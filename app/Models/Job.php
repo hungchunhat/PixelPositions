@@ -15,6 +15,11 @@ class Job extends Model
     {
         return $this->belongsTo(Employer::class);
     }
+    public function tag(string $name): void
+    {
+        $tag = Tag::firstOrCreate(['name' => strtolower($name)]);
+        $this->tags()->attach($tag);
+    }
     public function tags(): belongsToMany{
         return $this->belongsToMany(Tag::class);
     }

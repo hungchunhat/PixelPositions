@@ -1,2 +1,2 @@
-@props(['width'=> '90'])
-<img src="http://placehold.co/{{$width}}" alt="placeholder">
+@props(['url','width'=> '90'])
+<img src="{{asset($url)}}" alt="placeholder" width="{{$width}}">
